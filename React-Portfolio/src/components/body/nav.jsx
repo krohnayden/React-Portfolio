@@ -11,8 +11,8 @@ export default function Nav(props) {
     // }, [currentTab]);
 
     return (
-        <nav>
-            <ul className='nav nav-tabs'>
+        <nav className='nav'>
+            <ul className='navLinks'>
                 <li className='navItem'>
                     <a 
                     href='#about'

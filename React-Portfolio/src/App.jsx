@@ -30,7 +30,7 @@ export default function App() {
     <>
       <div>
         <title>Ayden Krohn's Portfolio | {currentTab}</title>
-      </div>;
+      </div>
       <Header
         currentTab={currentTab}
         handleTabChange={handleTabChange}

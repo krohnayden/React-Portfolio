@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './body/nav';
+import profilePic from '../assets/headShot1.jpg';
 
 export default function Header(props) {
     const { currentTab, handleTabChange } = props;
@@ -7,11 +8,9 @@ export default function Header(props) {
     return (
         <div>
             <section>
-                <header className=''>
-                    <div>
+                <header className='portfolioHeader'>
+                    <div className='navbar'>
                         <h1>Ayden Krohn's Portfolio</h1>
-                    </div>
-                    <div>
                         <Nav
                             currentTab={currentTab}
                             handleTabChange={handleTabChange}
@@ -21,8 +20,8 @@ export default function Header(props) {
             </section>
             <section className='introMessage'>
                 <div className='message'>
-                    <h2>Welcome to my Portfolio</h2>
-                    {/* <img src={imgSource} className="headShot" alt='headShot'></img> */}
+                    <h2>Welcome to My Portfolio</h2>
+                    <img src={profilePic} className="headShot" alt='headShot'></img>
                 </div>
             </section>
         </div>
