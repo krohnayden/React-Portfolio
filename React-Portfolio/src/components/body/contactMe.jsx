@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { validateEmail } from '../../utils/helpers'
 
 export default function Contact() {
     const [email, setEmail] = useState('');
@@ -23,65 +24,73 @@ export default function Contact() {
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
+        if (!validateEmail(email) || !userName || !message) {
+            setErrorMsg('Name/Email is Invalid!');
+            return;
+        }
+
+        if (!setMessage(message)) {
+            setErrorMsg('Message Required!');
+            return;
+        }
         setUserName('');
         setMessage('');
         setEmail('');
+        setErrorMsg('');
     };
 
     return (
         <section className='contactMe'>
-            <div className='flex-row'>
-                <h2 className='contactTitle'> Contact Me!</h2>
-            </div>
-
             <div className='contactInfo'>
-                <div>
+                <div className=''>
                     <h3>Welcome, {userName}</h3>
-                    <p>Need to contact me?</p>
+                    <p>Need to get in touch?</p>
                     <address>
-                        Topeka, KS <br/>
+                        Topeka, KS <br />
                         Email:<a href='mailto://krohnayden@gmail.com'>krohnayden@gmail.com</a><br />
                         Phone Number:<a href='tel:785-955-7333'>785-955-7333</a>
                     </address>
+                    <h3>Contact Me</h3>
                 </div>
             </div>
 
-            <div className='contactForm'>
-                <h3>Contact Me</h3>
-                <form className='form'>
-                    <label htmlFor='contactName'>Your Name</label>
-                    <input 
-                    value={userName}
-                    name='userName'
-                    onChange={handleInputChange}
-                    type='text'
-                    id='contactName'
-                    placeholder='Your Name'
-                    />
+            <div className='contactFormDiv'>
+                <form className='contactForm'>
+                    <div className='form'>
+                        {/* <label htmlFor='contactName'>Your Name</label> */}
+                        <input
+                            value={userName}
+                            name='userName'
+                            onChange={handleInputChange}
+                            type='text'
+                            className='contactInput'
+                            placeholder='Your Name'
+                        />
+                    </div>
+                    <div className='form'>
+                        {/* <label htmlFor='contactEmail'>Your Email</label> */}
+                        <input
+                            value={email}
+                            name='email'
+                            onChange={handleInputChange}
+                            type='email'
+                            className='contactInput'
+                            placeholder='Your Email'
+                        />
+                    </div>
+                    <div className='form'>
+                        {/* <label htmlFor='contactMessage'>Your Message</label> */}
+                        <textarea
+                            value={message}
+                            name='message'
+                            onChange={handleInputChange}
+                            type='message'
+                            className='contactInput'
+                            placeholder='Your Message'
+                        />
+                    </div>
                 </form>
-                <form className='form'>
-                    <label htmlFor='contactEmail'>Your Email</label>
-                    <input 
-                    value={email}
-                    name='email'
-                    onChange={handleInputChange}
-                    type='email'
-                    id='contactEmail'
-                    placeholder='Your Email'
-                    />
-                </form>
-                <form className='form'>
-                    <label htmlFor='contactMessage'>Your Message</label>
-                    <textarea
-                    value={message}
-                    name='message'
-                    onChange={handleInputChange}
-                    type='message'
-                    id='contactMessage'
-                    placeholder='Your Message'
-                    />
-                    <button type='button' onClick={handleFormSubmit}> Submit </button>
-                </form>
+                <button type='button' onClick={handleFormSubmit} className='formSubmit'> Submit </button>
             </div>
             {errorMsg && (
                 <div>

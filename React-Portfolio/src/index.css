@@ -139,6 +139,38 @@ footer {
     display: block;
     text-align: center;
 }
+
+.contactMe {
+    text-align: center;
+}
+
+.contactForm {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+}
+
+.form {
+    border: 3px solid black;
+    background-color: #5081CE;
+}
+
+.contactInput{
+    padding: 10px;
+    margin: 20px 10px 10px 10px;
+}
+
+.contactFormDiv {
+    padding-bottom: 20px;
+}
+
+.formSubmit {
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    /* border: none; */
+    background-color: #9ED3EE;
+}
 @media (max-width: 768px) {
     .projectImgDiv {
         flex-basis: calc(50% - 10px);

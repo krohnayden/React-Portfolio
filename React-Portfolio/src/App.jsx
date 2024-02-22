@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState} from 'react';
+import { useState } from 'react';
 import Header from './components/header';
 import About from './components/body/aboutMe';
 import Portfolio from './components/body/portfolioWorks';
@@ -23,8 +23,9 @@ export default function App() {
     }
     if (currentTab === 'Resume') {
       return <Resume />;
+    } else {
+      return <About />;
     }
-    return <About/>
   }
   return (
     <>
