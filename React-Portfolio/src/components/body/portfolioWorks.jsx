@@ -23,7 +23,7 @@ export default function Portfolio() {
                                className='codingQuiz projectImg'
                                alt="Coding-Quiz"
                                />
-                               <div className="imgCaptions">Front-end application that provides fun coding quiz.</div>
+                               <div className="imgCaptions">Front-end application that provides users with a fun coding quiz.</div>
                             </a>
                         </div>
                         <div className='projectImgDiv'>
@@ -33,7 +33,7 @@ export default function Portfolio() {
                                className='eCommerceApp projectImg'
                                alt="eCommerce-Application"
                                />
-                                <div className="imgCaptions">Back-end application that uses mySQL and express accessed by Insomnia.</div>
+                                <div className="imgCaptions">Back-end application that uses mySQL and express accessed by Insomnia to make a back-end eCommerceApplication.</div>
                             </a>
                         </div>
                         <div className='projectImgDiv'>
