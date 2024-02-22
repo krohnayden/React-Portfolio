@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-// import { validateEmail } from '../../utils/helpers';
-
 export default function Contact() {
     const [email, setEmail] = useState('');
     const [userName, setUserName] = useState('');
@@ -18,21 +16,12 @@ export default function Contact() {
         } else if (inputType === 'userName') {
             setUserName(inputValue);
         } else {
-            setErrorMsg(inputValue);
+            setMessage(inputValue);
         }
     };
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-
-        // if (!validateEmail(email) || !userName) {
-        //     setErrorMsg('Name or Email is invalid.');
-        //     return;
-        // }
-        if (!setMessage(message)) {
-            setErrorMsg('Message Required!');
-            return;
-        }
 
         setUserName('');
         setMessage('');

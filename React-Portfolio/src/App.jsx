@@ -9,7 +9,7 @@ import Footer from './components/footer';
 import './App.css'
 
 export default function App() {
-  const [currentTab, handleTabChange] = useState('about');
+  const [currentTab, handleTabChange] = useState('About');
 
   const renderTab = () => {
     if (currentTab === 'About') {
@@ -24,7 +24,7 @@ export default function App() {
     if (currentTab === 'Resume') {
       return <Resume />;
     }
-    return <About />
+    return <About/>
   }
   return (
     <>

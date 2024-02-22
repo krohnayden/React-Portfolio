@@ -72,11 +72,15 @@ footer {
     display: flex;
     text-align: center;
     justify-content: center;
+    border-top: 4px solid black;
 }
 .gitLink, .linkedinLink {
     text-decoration: none;
 }
 
+.portfolioHeader {
+    border-bottom: 4px solid black;
+}
 .portfolioTitle {
     text-align: center;
 }
@@ -131,6 +135,10 @@ footer {
     display: flex;
 }
 
+.aboutMe {
+    display: block;
+    text-align: center;
+}
 @media (max-width: 768px) {
     .projectImgDiv {
         flex-basis: calc(50% - 10px);
