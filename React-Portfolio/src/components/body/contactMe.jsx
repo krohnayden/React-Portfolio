@@ -6,12 +6,12 @@ export default function Contact() {
     const [userName, setUserName] = useState('');
     const [message, setMessage] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
-
+    
     const handleInputChange = (e) => {
         const { target } = e;
         const inputType = target.name;
         const inputValue = target.value;
-
+    
         if (inputType === 'email') {
             setEmail(inputValue);
         } else if (inputType === 'userName') {
@@ -20,25 +20,24 @@ export default function Contact() {
             setMessage(inputValue);
         }
     };
+    
+    const validateEvent = (event) => {
+        event.preventDefault();
 
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-
-        if (!validateEmail(email) || !userName || !message) {
-            setErrorMsg('Name/Email is Invalid!');
+        if (!validateEmail(email)) {
+            setErrorMsg('Email Invalid!')
             return;
         }
 
-        if (!setMessage(message)) {
+        if (!message.trim()) {
             setErrorMsg('Message Required!');
-            return;
+            return
         }
         setUserName('');
         setMessage('');
         setEmail('');
         setErrorMsg('');
-    };
-
+    }
     return (
         <section className='contactMe'>
             <div className='contactInfo'>
@@ -90,7 +89,7 @@ export default function Contact() {
                         />
                     </div>
                 </form>
-                <button type='button' onClick={handleFormSubmit} className='formSubmit'> Submit </button>
+                <button type='button' onClick={validateEvent} className='formSubmit'> Submit </button>
             </div>
             {errorMsg && (
                 <div>
