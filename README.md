@@ -6,8 +6,9 @@ My react portfolio application highlights an about me section, a linkable portfo
 
 ## Usage
 
-Click the below to view the repository, then copy the SSH key and clone it onto your device.
+<img width="1440" alt="portfolioScreenshot" src="https://github.com/krohnayden/React-Portfolio/assets/143373263/712549a8-efff-4af5-bd7c-565434582484">
 
+Click the below to view the repository, then copy the SSH key and clone it onto your device.
 https://github.com/krohnayden/React-Portfolio
 
 Click below to view the deployed application
